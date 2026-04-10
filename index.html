@@ -713,50 +713,99 @@
     ──────────────────────────────────────────── */
     #contact { background: var(--off-white); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      max-width: 960px;
+    /* Presented By header */
+    .presented-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 48px;
     }
 
-    .agent-block { margin-bottom: 24px; }
+    .presented-title {
+      font-family: var(--font-sans);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .presented-rule {
+      width: 36px;
+      height: 2px;
+      background: var(--black);
+      margin-top: 12px;
+    }
+
+    .presented-logo img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+    }
+
+    /* Agent row */
+    .agent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 36px;
+      padding: 44px 0;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .agent-row:last-of-type {
+      border-bottom: 1px solid var(--light-gray);
+    }
 
     .agent-photo {
-      width: 72px;
-      height: 72px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       object-position: top;
-      margin-bottom: 20px;
+      border: 2px solid var(--black);
+      flex-shrink: 0;
       display: block;
+      background: #ddd;
     }
 
-    .contact-row {
-      margin-bottom: 20px;
+    .agent-details { flex: 1; }
+
+    .agent-name {
+      font-family: var(--font-sans);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
     }
 
-    .contact-row-label {
+    .agent-info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 48px;
+    }
+
+    .agent-info-item {}
+
+    .agent-info-label {
       font-family: var(--font-sans);
       font-size: 8.5px;
       font-weight: 600;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gray);
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
-    .contact-row-value {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
+    .agent-info-value {
+      font-family: var(--font-sans);
+      font-size: 13px;
       font-weight: 400;
       color: var(--black);
       text-decoration: none;
       display: block;
     }
 
-    .contact-row-value:hover { text-decoration: underline; }
+    .agent-info-value:hover { text-decoration: underline; }
 
     /* Form */
     .contact-form {
@@ -1097,70 +1146,108 @@
        CONTACT
   ════════════════════════════════════════ -->
   <section id="contact" class="section-pad">
-    <div class="inner">
-      <span class="eyebrow">Get in Touch</span>
-      <h2 class="section-heading">Contact</h2>
 
-      <div class="contact-grid">
-
-        <!-- Agent info -->
-        <div>
-          <img src="images/erin-mccoin.jpg" alt="Erin McCoin" class="agent-photo"
-               onerror="this.style.display='none'">
-
-          <div class="contact-row">
-            <div class="contact-row-label">Agent</div>
-            <span class="contact-row-value">Erin McCoin</span>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-label">Brokerage</div>
-            <span class="contact-row-value">Compass</span>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-label">Phone</div>
-            <a href="tel:+14153708874" class="contact-row-value">415 370 8874</a>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-label">Email</div>
-            <a href="mailto:erin.mccoin@compass.com" class="contact-row-value">erin.mccoin@compass.com</a>
-          </div>
-          <div class="contact-row">
-            <div class="contact-row-label">License</div>
-            <span class="contact-row-value" style="font-size:1rem;">CA DRE #01410378</span>
-          </div>
-        </div>
-
-        <!-- Contact form -->
-        <!--
-          PLACEHOLDER: Sign up at formspree.io (free), create a form, and replace
-          REPLACE_WITH_FORMSPREE_ID below with your form ID (e.g. xpwzqkrb)
-        -->
-        <form class="contact-form"
-              action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID"
-              method="POST">
-          <input type="hidden" name="property" value="3958 Los Arabis Dr, Lafayette, CA 94549">
-
-          <div class="form-row">
-            <label class="form-label" for="name">Name</label>
-            <input class="form-input" type="text" id="name" name="name" required>
-          </div>
-          <div class="form-row">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="email" id="email" name="email" required>
-          </div>
-          <div class="form-row">
-            <label class="form-label" for="phone">Phone</label>
-            <input class="form-input" type="tel" id="phone" name="phone">
-          </div>
-          <div class="form-row">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="form-textarea" id="message" name="message" rows="4">I'm interested in 3958 Los Arabis Dr, Lafayette, CA 94549.</textarea>
-          </div>
-          <button class="form-submit" type="submit">Send Message</button>
-        </form>
-
+    <!-- Presented By header -->
+    <div class="presented-header">
+      <div>
+        <div class="presented-title">Presented By</div>
+        <div class="presented-rule"></div>
+      </div>
+      <div class="presented-logo">
+        <img src="images/favicon.png" alt="Erin McCoin Group">
       </div>
     </div>
+
+    <!-- Erin McCoin -->
+    <div class="agent-row">
+      <img src="images/erin-mccoin.jpg" alt="Erin McCoin" class="agent-photo">
+      <div class="agent-details">
+        <div class="agent-name">Erin McCoin</div>
+        <div class="agent-info-grid">
+          <div class="agent-info-item">
+            <div class="agent-info-label">Company</div>
+            <span class="agent-info-value">Compass</span>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Phone</div>
+            <a href="tel:+14153708874" class="agent-info-value">415.370.8874</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Email</div>
+            <a href="mailto:erin.mccoin@compass.com" class="agent-info-value">erin.mccoin@compass.com</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Web</div>
+            <a href="https://www.erinmccoin.com" target="_blank" class="agent-info-value">www.erinmccoin.com</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">License #</div>
+            <span class="agent-info-value">DRE#: 01410378</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Megan Evens -->
+    <div class="agent-row">
+      <!-- PLACEHOLDER: Save Megan's photo as images/megan-evens.jpg -->
+      <img src="images/megan-evens.jpg" alt="Megan Evens" class="agent-photo"
+           onerror="this.style.background='#e0e0e0'">
+      <div class="agent-details">
+        <div class="agent-name">Megan Evens</div>
+        <div class="agent-info-grid">
+          <div class="agent-info-item">
+            <div class="agent-info-label">Company</div>
+            <span class="agent-info-value">Compass</span>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Phone</div>
+            <a href="tel:+19258869523" class="agent-info-value">(925) 886-9523</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Email</div>
+            <a href="mailto:megan.evens@compass.com" class="agent-info-value">megan.evens@compass.com</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">Web</div>
+            <a href="https://www.evensmccoin.com" target="_blank" class="agent-info-value">www.evensmccoin.com</a>
+          </div>
+          <div class="agent-info-item">
+            <div class="agent-info-label">License #</div>
+            <span class="agent-info-value">DRE# 02191183</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="margin-top: 64px; max-width: 600px;">
+      <span class="eyebrow">Send a Message</span>
+      <form class="contact-form"
+            action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID"
+            method="POST"
+            style="margin-top: 24px;">
+        <input type="hidden" name="property" value="3958 Los Arabis Dr, Lafayette, CA 94549">
+        <div class="form-row">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="phone">Phone</label>
+          <input class="form-input" type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" rows="4">I'm interested in 3958 Los Arabis Dr, Lafayette, CA 94549.</textarea>
+        </div>
+        <button class="form-submit" type="submit">Send Message</button>
+      </form>
+    </div>
+
   </section>
 
 
