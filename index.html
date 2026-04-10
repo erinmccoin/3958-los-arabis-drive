@@ -488,24 +488,10 @@
 
     .desc-body p + p { margin-top: 22px; }
 
-    /* Stats row below description */
+    /* Right column: key stats */
     .desc-stats {
-      display: flex;
-      gap: 0;
-      border-top: 2px solid var(--black);
-      margin-top: 48px;
-      padding-top: 0;
-    }
-
-    .desc-stats .stat-row {
-      flex: 1;
-      padding: 28px 32px 0 0;
-      border-bottom: none;
-      border-right: 1px solid var(--light-gray);
-    }
-
-    .desc-stats .stat-row:last-child {
-      border-right: none;
+      border-left: 2px solid var(--black);
+      padding-left: 36px;
     }
 
     .stat-row {
@@ -953,7 +939,7 @@
     <div class="inner">
       <span class="eyebrow">The Property</span>
 
-      <div>
+      <div style="display:grid;grid-template-columns:3fr 2fr;gap:80px;align-items:start;">
 
         <div class="desc-body">
           <!-- PLACEHOLDER: Replace with actual property description -->
