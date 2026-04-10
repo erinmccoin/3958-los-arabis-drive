@@ -599,6 +599,31 @@
 
     .photo-item:hover img { transform: scale(1.04); }
 
+    /* Gallery section headers */
+    .photo-section-header {
+      padding: 32px 44px 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .photo-section-header span {
+      font-family: var(--font-sans);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    .photo-section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light-gray);
+    }
+
     /* Grid span helpers */
     .span-8  { grid-column: span 8; }
     .span-6  { grid-column: span 6; }
@@ -1055,50 +1080,243 @@
       <h2 class="section-heading">Photos</h2>
     </div>
 
-    <!--
-      PLACEHOLDER GRID
-      ─────────────────
-      • Drop your photos into the images/ folder named photo-01.jpg, photo-02.jpg, etc.
-      • You can add more <div class="photo-item"> rows as needed.
-      • Adjust span-8 / span-6 / span-4 to control how wide each photo appears.
-    -->
-    <div class="photo-grid" id="photo-grid">
-      <div class="photo-item span-8">
-        <img src="images/photo-01.jpg" alt="3958 Los Arabis Dr — Main" loading="lazy">
+    <div id="photo-grid">
+
+      <!-- ── EXTERIOR ── -->
+      <div class="photo-section-header"><span>Exterior</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7257-Edit.jpg" alt="3958 Los Arabis Dr — Front Exterior" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7216-Edit.jpg" alt="3958 Los Arabis Dr — Front Door" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7210-Edit.jpg" alt="3958 Los Arabis Dr — Front Exterior" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7276-Edit.jpg" alt="3958 Los Arabis Dr — Driveway" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-02.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── LIVING ROOM ── -->
+      <div class="photo-section-header"><span>Living Room</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A6953-Edit.jpg" alt="3958 Los Arabis Dr — Living Room" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A6964-Edit.jpg" alt="3958 Los Arabis Dr — Living Room Fireplace" loading="lazy">
+        </div>
+        <div class="photo-item span-12">
+          <img src="images/20260409-6K7A6962.jpg" alt="3958 Los Arabis Dr — Living Room" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-03.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── KITCHEN ── -->
+      <div class="photo-section-header"><span>Kitchen</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7334.jpg" alt="3958 Los Arabis Dr — Kitchen" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A6989.jpg" alt="3958 Los Arabis Dr — Kitchen" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A6991-Edit.jpg" alt="3958 Los Arabis Dr — Kitchen Island" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A6998.jpg" alt="3958 Los Arabis Dr — Kitchen Island" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7000-Edit.jpg" alt="3958 Los Arabis Dr — Kitchen" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7007.jpg" alt="3958 Los Arabis Dr — Kitchen Range" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7012.jpg" alt="3958 Los Arabis Dr — Kitchen Pantry" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7025-Edit.jpg" alt="3958 Los Arabis Dr — Kitchen Sink" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7020.jpg" alt="3958 Los Arabis Dr — Kitchen Pantry" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7015.jpg" alt="3958 Los Arabis Dr — Kitchen Pantry Interior" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7024.jpg" alt="3958 Los Arabis Dr — Kitchen Range &amp; Refrigerator" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7348.jpg" alt="3958 Los Arabis Dr — Kitchen Range" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7351.jpg" alt="3958 Los Arabis Dr — Kitchen Detail" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7357.jpg" alt="3958 Los Arabis Dr — Range Detail" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7361.jpg" alt="3958 Los Arabis Dr — Kitchen" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7365.jpg" alt="3958 Los Arabis Dr — Kitchen" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-04.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── DINING AREA ── -->
+      <div class="photo-section-header"><span>Dining Area</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A6979.jpg" alt="3958 Los Arabis Dr — Dining Room" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A6984.jpg" alt="3958 Los Arabis Dr — Dining &amp; Kitchen" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-05.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── FAMILY ROOM ── -->
+      <div class="photo-section-header"><span>Family Room</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7043-Edit.jpg" alt="3958 Los Arabis Dr — Family Room" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7056.jpg" alt="3958 Los Arabis Dr — Family Room" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7066.jpg" alt="3958 Los Arabis Dr — Family Room" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7069.jpg" alt="3958 Los Arabis Dr — Family Room Built-Ins" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-6">
-        <img src="images/photo-06.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── PRIMARY BEDROOM ── -->
+      <div class="photo-section-header"><span>Primary Bedroom</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7139.jpg" alt="3958 Los Arabis Dr — Primary Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7141.jpg" alt="3958 Los Arabis Dr — Primary Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7154.jpg" alt="3958 Los Arabis Dr — Primary Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7156-Edit.jpg" alt="3958 Los Arabis Dr — Primary Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7162.jpg" alt="3958 Los Arabis Dr — Primary Walk-In Closet" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-6">
-        <img src="images/photo-07.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── PRIMARY BATH ── -->
+      <div class="photo-section-header"><span>Primary Bath</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7163-Edit.jpg" alt="3958 Los Arabis Dr — Primary Bath" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7192.jpg" alt="3958 Los Arabis Dr — Primary Bath Vanity" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7205.jpg" alt="3958 Los Arabis Dr — Primary Bath" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7182.jpg" alt="3958 Los Arabis Dr — Primary Bath Shower" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7384.jpg" alt="3958 Los Arabis Dr — Primary Bath" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-08.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── ADDITIONAL BEDROOMS ── -->
+      <div class="photo-section-header"><span>Additional Bedrooms</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7072.jpg" alt="3958 Los Arabis Dr — Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7075.jpg" alt="3958 Los Arabis Dr — Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7128.jpg" alt="3958 Los Arabis Dr — Bedroom / Office" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/zz.jpg" alt="3958 Los Arabis Dr — Bedroom / Office" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7130.jpg" alt="3958 Los Arabis Dr — Bedroom" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7133.jpg" alt="3958 Los Arabis Dr — Bedroom" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-09.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── ADDITIONAL BATH ── -->
+      <div class="photo-section-header"><span>Additional Bath</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7096-Edit.jpg" alt="3958 Los Arabis Dr — Bath" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7112.jpg" alt="3958 Los Arabis Dr — Bath" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7381.jpg" alt="3958 Los Arabis Dr — Bath Shower" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-10.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── BACKYARD ── -->
+      <div class="photo-section-header"><span>Backyard</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-8">
+          <img src="images/20260409-6K7A7220-Edit.jpg" alt="3958 Los Arabis Dr — Backyard Patio" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7226-Edit.jpg" alt="3958 Los Arabis Dr — Backyard" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7222-Edit.jpg" alt="3958 Los Arabis Dr — Backyard Lawn" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7238-Edit.jpg" alt="3958 Los Arabis Dr — Backyard" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7232-Edit.jpg" alt="3958 Los Arabis Dr — Side Yard" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7241-Edit.jpg" alt="3958 Los Arabis Dr — Fire Pit" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7244-Edit.jpg" alt="3958 Los Arabis Dr — Fire Pit" loading="lazy">
+        </div>
+        <div class="photo-item span-4">
+          <img src="images/20260409-6K7A7250-Edit.jpg" alt="3958 Los Arabis Dr — Fire Pit" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-8">
-        <img src="images/photo-11.jpg" alt="3958 Los Arabis Dr" loading="lazy">
+
+      <!-- ── MORE ── -->
+      <div class="photo-section-header"><span>More</span></div>
+      <div class="photo-grid">
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A6971.jpg" alt="3958 Los Arabis Dr — Entryway" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7086.jpg" alt="3958 Los Arabis Dr — Hallway" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7088-Edit.jpg" alt="3958 Los Arabis Dr — Laundry Room" loading="lazy">
+        </div>
+        <div class="photo-item span-6">
+          <img src="images/20260409-6K7A7034.jpg" alt="3958 Los Arabis Dr — Built-In" loading="lazy">
+        </div>
       </div>
-      <div class="photo-item span-4">
-        <img src="images/photo-12.jpg" alt="3958 Los Arabis Dr" loading="lazy">
-      </div>
+
     </div>
   </section>
 
