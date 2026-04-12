@@ -313,6 +313,20 @@
       pointer-events: none;
     }
 
+    /* Covers Vimeo title flash on load */
+    #vimeo-cover {
+      position: absolute;
+      inset: 0;
+      background: #0a0a0a;
+      z-index: 1;
+      pointer-events: none;
+      animation: vimeo-cover-fade 1.8s ease 1s forwards;
+    }
+
+    @keyframes vimeo-cover-fade {
+      to { opacity: 0; }
+    }
+
     .hero-gradient {
       position: absolute;
       inset: 0;
@@ -1019,6 +1033,7 @@
       </iframe>
     </div>
 
+    <div id="vimeo-cover"></div>
     <div class="hero-gradient"></div>
 
 
