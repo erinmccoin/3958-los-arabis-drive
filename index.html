@@ -293,13 +293,24 @@
     }
 
     /* Vimeo background container */
-    #hero-video {
+    #vimeo-bg {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      z-index: 0;
+      overflow: hidden;
+    }
+
+    #vimeo-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 177.78vh;
+      min-height: 56.25vw;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
 
     .hero-gradient {
@@ -944,9 +955,14 @@
   ════════════════════════════════════════ -->
   <section id="hero">
 
-    <video id="hero-video" autoplay muted loop playsinline>
-      <source src="images/3958-los-arabis.mp4" type="video/mp4">
-    </video>
+    <div id="vimeo-bg">
+      <iframe id="vimeo-iframe"
+        src="https://player.vimeo.com/video/1182307668?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
 
     <div class="hero-gradient"></div>
     <div class="hero-watermark">3958 Los Arabis</div>
@@ -1443,14 +1459,17 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
-    // ── HERO VIDEO SOUND TOGGLE ───────────────────────────────────
-    const heroVideo = document.getElementById('hero-video');
-    const soundBtn  = document.getElementById('sound-btn');
+    // ── VIMEO SOUND TOGGLE ────────────────────────────────────────
+    const vimeoPlayer = new Vimeo.Player('vimeo-iframe');
+    const soundBtn    = document.getElementById('sound-btn');
+    let muted = true;
 
     soundBtn.addEventListener('click', () => {
-      heroVideo.muted = !heroVideo.muted;
-      soundBtn.textContent = heroVideo.muted ? '🔇' : '🔊';
+      muted = !muted;
+      vimeoPlayer.setMuted(muted);
+      soundBtn.textContent = muted ? '🔇' : '🔊';
     });
 
 
