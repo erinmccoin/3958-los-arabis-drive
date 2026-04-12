@@ -293,34 +293,13 @@
     }
 
     /* Vimeo background container */
-    #vimeo-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    #vimeo-bg iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 177.78vh;
-      min-height: 56.25vw;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    /* Fallback image — shown until video loads */
-    #hero-fallback {
+    #hero-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 1;
+      z-index: 0;
     }
 
     .hero-gradient {
@@ -965,12 +944,9 @@
   ════════════════════════════════════════ -->
   <section id="hero">
 
-    <!-- Vimeo background — set VIMEO_ID in the script below once you have it -->
-    <div id="vimeo-bg"></div>
-
-    <!-- Fallback image shown before/if video loads — add your best photo here -->
-    <img id="hero-fallback" src="images/hero.jpg" alt="3958 Los Arabis Dr, Lafayette"
-         onerror="this.style.display='none'">
+    <video id="hero-video" autoplay muted loop playsinline>
+      <source src="images/3958-los-arabis.mp4" type="video/mp4">
+    </video>
 
     <div class="hero-gradient"></div>
     <div class="hero-watermark">3958 Los Arabis</div>
@@ -1467,65 +1443,15 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
-  <script src="https://player.vimeo.com/api/player.js" async></script>
   <script>
-    // ── VIMEO VIDEO ──────────────────────────────────────────────
-    //
-    // PLACEHOLDER: Once you have the Vimeo video ID, set it here.
-    // Example: const VIMEO_ID = 799999151;
-    //
-    const VIMEO_ID = null;
+    // ── HERO VIDEO SOUND TOGGLE ───────────────────────────────────
+    const heroVideo = document.getElementById('hero-video');
+    const soundBtn  = document.getElementById('sound-btn');
 
-    if (VIMEO_ID) {
-      let vimeoReady = false;
-      let muted = true;
-
-      function initVimeo() {
-        if (typeof Vimeo === 'undefined') { setTimeout(initVimeo, 100); return; }
-
-        const player = new Vimeo.Player('vimeo-bg', {
-          id: VIMEO_ID,
-          background: 1,
-          autoplay: true,
-          muted: true,
-          loop: true,
-          responsive: false,
-        });
-
-        player.ready().then(() => {
-          // Hide fallback image once video is ready
-          const fallback = document.getElementById('hero-fallback');
-          if (fallback) fallback.style.display = 'none';
-
-          const iframe = document.querySelector('#vimeo-bg iframe');
-          if (iframe) {
-            iframe.style.cssText = [
-              'position:absolute',
-              'top:50%',
-              'left:50%',
-              'transform:translate(-50%,-50%)',
-              'min-width:177.78vh',
-              'min-height:56.25vw',
-              'width:100%',
-              'height:100%',
-              'pointer-events:none',
-            ].join(';');
-          }
-        });
-
-        // Sound toggle
-        document.getElementById('sound-btn').addEventListener('click', () => {
-          muted = !muted;
-          player.setMuted(muted);
-          document.getElementById('sound-btn').textContent = muted ? '🔇' : '🔊';
-        });
-      }
-
-      initVimeo();
-    } else {
-      // No video yet — hide sound button
-      document.getElementById('sound-btn').style.display = 'none';
-    }
+    soundBtn.addEventListener('click', () => {
+      heroVideo.muted = !heroVideo.muted;
+      soundBtn.textContent = heroVideo.muted ? '🔇' : '🔊';
+    });
 
 
     // ── MENU ─────────────────────────────────────────────────────
